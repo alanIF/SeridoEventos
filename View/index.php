@@ -3,7 +3,7 @@ include ("topo.phtml");
 ?>
 
 
-AQUI FICA O QUE QUISER ...
+Será os eventos do usuario tem.
 
 
 <?php include ("rodape.html")?>

@@ -2,7 +2,7 @@
 
 function F_conect() {
     $servidor = "localhost";
-    $nomebanco = "sep_enem";
+    $nomebanco = "seridoeventos";
     $usuario = "root";
     $senha = "";
 
