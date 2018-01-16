@@ -56,7 +56,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#" class="btn btn-danger btn-fill">Entrar</a>
+                        <a href="./View/" class="btn btn-danger btn-fill">Entrar</a>
                     </li>
                 </ul>
             </div>

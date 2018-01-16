@@ -32,11 +32,15 @@ function logar($email, $senha) {
         // teste - certo
 
         while ($row = $result->fetch_assoc()) {
-            $id_usuario = $row["idusuario"];
+            $id_usuario = $row["id"];
+            $nome_usuario = $row["nome"];
+            $instituicao = $row["instituicao"];
         }
         //fim teste
-        $_SESSION['usuario'] = $email;
-        $_SESSION['idUSU'] = $id_usuario;
+        $_SESSION['Usu_email'] = $email;
+        $_SESSION['Usu_nome'] = $nome_usuario;
+        $_SESSION['Usu_id'] = $id_usuario;
+        $_SESSION['Usu_inst'] = $instituicao;
         $_SESSION['ativo'] = true;
 
         header('Location: ../view/menu.php');
@@ -59,24 +63,10 @@ function sair() {
     header('Location: ../');
 }
 
-function testLogado() {
+function testLogado(){
     session_start();
-    if ($_SESSION['usuario'] == false) {
+    if ($_SESSION['Usu_email'] == false) {
         header('Location: ../');
     }
 }
 
-function NomeArea($Area) {
-    if ($Area == 1) {
-        $area = "Ciências da Natureza e suas Tecnologias";
-    } else if ($Area == 2) {
-        $area = "Ciências Humanas e suas Tecnologias";
-    } else if ($Area == 3) {
-        $area = "Linguagens, Códigos e suas Tecnologias";
-    } else if ($Area == 4) {
-        $area = "Matemática e suas Tecnologias";
-    }else{
-        $area = "Área não definida";
-    }
-    return $area;
-}
