@@ -9,8 +9,8 @@ Class EventoController{
        return cadastrarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id_usuario);
     }
     
-    public function ListarProfessores() {
-        return listarUsuarios();
+    public function ListarEventos($usuario) {
+        return listarEventos($usuario);
     }
    
      public function RecuperarProfessores($id) {

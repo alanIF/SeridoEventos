@@ -3,8 +3,8 @@
 
 function cadastrarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id_usuario) {
     $conn = F_conect();
-    $sql = "INSERT INTO evento(titulo, descricao, link_inscricao,local_evento,curso,cor,inicio_evento,fim_evento)
-            VALUES('" . $titulo . "','" . $descricao . "','" . $link . "','" . $local . "','".$curso."','".$cor."','".$inicio."','".$fim."')";
+    $sql = "INSERT INTO evento(titulo, descricao, link_inscricao,local_evento,curso,cor,inicio_evento,fim_evento,id_usuario)
+            VALUES('" . $titulo . "','" . $descricao . "','" . $link . "','" . $local . "','".$curso."','".$cor."','".$inicio."','".$fim."','".$id_usuario."')";
     if ($conn->query($sql) == TRUE) {
         Alert("Oba!", "Evento cadastrado com sucesso <br/> <a href='Evento_listar.php'> Listar seus Eventos</a>", "success");
     } else {
@@ -14,22 +14,29 @@ function cadastrarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao
     $conn->close();
 }
 
-function listarUsuarios() {
+function listarEventos($usuario) {
     $conn = F_conect();
-    $result = mysqli_query($conn, "Select * from usuario WHERE nivel = 1");
+    $result = mysqli_query($conn, "Select * from evento WHERE id_usuario ='".$usuario."'");
     
     $i = 0;
-    $users = array();
+    $eventos = array();
     if (mysqli_num_rows($result)!=0) {
         while ($row = $result->fetch_assoc()) {
-            $users[$i]['NOME'] = $row['nome'];
-            $users[$i]['EMAIL'] = $row['email'];
-            $users[$i]['ID_USU'] = $row['idAdmin'];
+            $eventos[$i]['id'] = $row['id'];
+
+            $eventos[$i]['titulo'] = $row['titulo'];
+            $eventos[$i]['descricao'] = $row['descricao'];
+            $eventos[$i]['local_evento'] = $row['local_evento'];
+            $eventos[$i]['curso'] = $row['curso'];
+            $eventos[$i]['inicio_evento'] = $row['inicio_evento'];
+            $eventos[$i]['fim_evento'] = $row['fim_evento'];
+            $eventos[$i]['link_inscricao'] = $row['link_inscricao'];
+
             $i++;
         }
     }
     $conn->close();
-    return $users;
+    return $eventos;
 }
 
 function RecuperarUsuarios($id) {

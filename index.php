@@ -55,15 +55,80 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="./View/" class="btn btn-danger btn-fill">Entrar</a>
-                    </li>
+                    <li> <a href="./View/" btn btn-danger btn-fill> Entrar por login</a></li>
+                    <li><a data-toggle="modal" data-target="#myModal" class="btn btn-danger btn-fill">Entrar por Modal, ta bugado nao ta direcionando certo</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
     </nav>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Login</h4>
+      </div>
+      <div class="modal-body">
+         <?php
+if (isset($_POST['usuario']) && isset($_POST['senha'])) {
+    require './Controller/ConnectController.php';
+
+    $usuario = htmlspecialchars($_POST['usuario'], ENT_QUOTES, 'UTF-8');
+    $senha = htmlspecialchars($_POST['senha'], ENT_QUOTES, 'UTF-8');
+
+    $login = new ConnectController();
+    $login->RealizarLogin($usuario, $senha);
+    
+}
+
+?>
+
+
+
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-md-offset-4">
+                    <div class="account-wall">
+                        <div id="my-tab-content" class="tab-content">
+                            <div class="tab-pane active" id="login">
+                                <img class="img-rounded" src="../imagens/logo.png"
+                                     alt="">
+                                <form class="form-signin" action="" method="post">
+                                    <input type="email" name="usuario" class="form-control"   placeholder="E-mail" required autofocus>
+
+                                    <br>
+
+                                    <input type="password" name="senha" class="form-control" placeholder="Senha" required>
+
+                                    <br>
+                                    <br>
+
+                                    <input type="submit" name="logar" class="btn btn-lg btn-danger btn-block" value="Entrar" />
+
+                                    <a href="./USER_Cadastrar.php"   class="btn btn-lg btn-danger btn-block">Cadastrar</a>
+
+                                </form>
+                                 <a class="col-sm-2 col-md-8 col-md-offset-2" href="#"><h4>Esquecei minha senha</h4></a>
+                            </div>        
+                          </div>
+                    </div>
+                   
+                </div>
+            </div>
+        
+ 
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 
     <div class="section section-header">
         <div class="parallax filter filter-color-red">
