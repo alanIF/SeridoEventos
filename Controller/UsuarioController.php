@@ -2,10 +2,10 @@
      require_once '../Model/Usuario.php';
 Class UsuarioController{
     
-    public function CadastrarUsuario($nome, $email, $nivel, $senha, $C_senha) {
+    public function CadastrarUsuario($nome, $email, $instituicao, $senha, $C_senha) {
         
         if($senha != NULL and $senha === $C_senha){
-            cadastrar($nome, $email, $nivel, $senha);
+            cadastrar($nome, $email, $instituicao, $senha);
             
        }
     }
@@ -15,17 +15,17 @@ Class UsuarioController{
     }
    
      public function RecuperarProfessores($id) {
-        return RecuperarUsuarios($id);
+        return RecuperarUsuarios_Editar($id);
     }
     
     public function ExcluirUsuario($id) {
-        excluir($id);
+        excluir_Usuario($id);
         header( "Location: Usuario_listar.php");
     }
     
-    public function EditarProfessor($nome, $email, $nivel, $senha, $C_senha,$id) {
+    public function EditarUsuario($nome, $email, $instituicao, $senha, $C_senha,$id) {
         if($senha != NULL and $senha === $C_senha){
-            editarProfessor($nome, $email, $nivel, $senha, $id);
+            editarUsuario($nome, $email, $instituicao, $senha, $id);
             
        }
     }

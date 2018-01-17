@@ -17,14 +17,11 @@
                                             location.href='erro.php'
                                     </script>";
     }
-  ?>
-
-    <div class="col-md-offset-2 col-lg-8 col-md-8 col-sm-8 col-xs-8 " >
-        <?php
+ 
             require_once '../Controller/UsuarioController.php';
             if (isset($_POST["cadastrar"])) {
                 $objControl = new UsuarioController();
-                $objControl->EditarProfessor($_POST["nome"], $_POST["email"], $_POST["nivel"], $_POST["senha"], $_POST["C_senha"], $id);
+                $objControl->EditarUsuario($_POST["nome"], $_POST["email"], $_POST["instit"], $_POST["senha"], $_POST["C_senha"], $id);
             }
         ?> 
         <br />
@@ -42,11 +39,13 @@
 
 
             <div class="input-group">
-                <span class="input-group-addon">Nível de usuário</span>
+                <span class="input-group-addon">Instituição</span>
             </div>
-            <select name="nivel" class="form-control" >
-                <option value="1" selected="selected">Professor</option>
-                <option value="2">Cordenador</option>
+            <select name="instit" class="form-control">
+                <option value="UFRN" selected="selected">UFRN</option>
+                <option value="UERN">UERN</option>
+                <option value="IFRN">IFRN</option>
+                <option value="FCST">FCST</option>
             </select><br/>
 
             <div class="input-group">
@@ -60,8 +59,7 @@
             </div>
             <input type="password" class="form-control" placeholder="Confirmar senha" name="C_senha" required="required"/><br/>
 
-            <input type="submit" class="btn btn-success" name="cadastrar" value="Cadastrar"> 
-        </form>           
-    </div>
+            <input type="submit" class="btn btn-success" name="cadastrar" value="Atualizar"> 
+        </form>     
 
     <?php require_once './Rodape.html'; ?>

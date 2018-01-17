@@ -35,7 +35,27 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/themify-icons.css" rel="stylesheet">
+    <script>
+            function validarSenha() {
+                NovaSenha = document.FormSenha.senha.value;
+                CNovaSenha = document.FormSenha.C_senha.value;
+                if (NovaSenha != CNovaSenha) {
+                    alert("Senhas diferentes!\ \n Favor digitar senhas iguais");
+                    return false;
+                }
+                return true;
+            }
 
+            function confirmar() {
+                // só permitirá o envio se o usuário responder OK
+                var resposta = window.confirm("Deseja mesmo" +
+                        " excluir este registro?");
+                if (resposta)
+                    return true;
+                else
+                    return false;
+            }
+        </script>
 </head>
 <body>
 
@@ -68,9 +88,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="user.php">
+                    <a href="Usuario_listar.php">
                         <i class=" ti-user"></i>
-                        <p>Profile</p>
+                        <p>Usuários</p>
                     </a>
                 </li>
               
