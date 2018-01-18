@@ -13,20 +13,19 @@ Class EventoController{
         return listarEventos($usuario);
     }
    
-     public function RecuperarProfessores($id) {
-        return RecuperarUsuarios($id);
+     public function RecuperarEvento($id) {
+        return RecuperarEvento($id);
     }
     
-    public function ExcluirUsuario($id) {
-        excluir($id);
-        header( "Location: Usuario_listar.php");
+      public function AtualizarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id) {
+		$inicio =date('Y-m-d H:i:s', strtotime($inicio));
+		$fim =date('Y-m-d H:i:s', strtotime($fim));
+
+       return atualizarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id);
     }
-    
-    public function EditarProfessor($nome, $email, $nivel, $senha, $C_senha,$id) {
-        if($senha != NULL and $senha === $C_senha){
-            editarProfessor($nome, $email, $nivel, $senha, $id);
-            
-       }
+     public function excluir_Evento($id) {
+        excluir_Evento($id);
     }
+   
     
 }    

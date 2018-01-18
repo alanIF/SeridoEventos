@@ -43,7 +43,7 @@ function logar($email, $senha) {
         $_SESSION['Usu_inst'] = $instituicao;
         $_SESSION['ativo'] = true;
 
-        header('Location: globo.com.br');
+        header('Location: ../View/Menu.php');
     } else if (mysqli_num_rows($result) != 1) {
         $_SESSION['usuario'] = false;
         $_SESSION['ativo'] = false;

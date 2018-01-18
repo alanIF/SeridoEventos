@@ -39,46 +39,58 @@ function listarEventos($usuario) {
     return $eventos;
 }
 
-function RecuperarUsuarios($id) {
+function RecuperarEvento($id) {
     $conn = F_conect();
-    $result = mysqli_query($conn, "Select * from usuario WHERE idAdmin =".$id);
+    $result = mysqli_query($conn, "Select * from evento WHERE id =".$id);
     
     $i = 0;
-    $users = array();
+    $eventos = array();
     if (mysqli_num_rows($result)!=0) {
         while ($row = $result->fetch_assoc()) {
-            $users[$i]['NOME'] = $row['nome'];
-            $users[$i]['EMAIL'] = $row['email'];
-            $users[$i]['SENHA'] = $row['senha'];
+
+            $eventos[$i]['titulo'] = $row['titulo'];
+            $eventos[$i]['descricao'] = $row['descricao'];
+            $eventos[$i]['local_evento'] = $row['local_evento'];
+            $eventos[$i]['curso'] = $row['curso'];
+            $eventos[$i]['inicio_evento'] = $row['inicio_evento'];
+            $eventos[$i]['fim_evento'] = $row['fim_evento'];
+            $eventos[$i]['link_inscricao'] = $row['link_inscricao'];
             $i++;
         }
     }
     $conn->close();
-    return $users;
+    return $eventos;
 }
 
-function editarProfessor($nome, $email, $nivel, $senha, $id) {
+function atualizarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id) {
     $conn = F_conect();
-    $sql = " UPDATE usuario SET  nome='" . $nome . "', email='" . $email . " ', nivel='" .
-            $nivel . "', senha='" . $senha . " ' WHERE idAdmin = " . $id;
+    $sql = " UPDATE evento SET  titulo='" . $titulo . "', curso='" . $curso . " ', link_inscricao='" .
+            $link . "', inicio_evento='" . $inicio . " ', fim_evento='".$fim."', local_evento='".$local."', cor='".$cor."'  WHERE id = " . $id;
 
     if ($conn->query($sql) === TRUE) {
         Alert("Oba!", "Dados atualizados com sucesso", "success");
-        echo "<a href='Usuario_listar.php'> Voltar a lista professores</a>";
+        echo "<a href='Evento_listar.php'> Voltar a lista de seus eventos</a>";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
     $conn->close();
 }
 
-function excluir($id) {
+function excluir_Evento($id) {
 
     $conn = F_conect();
 
-    $sql = "DELETE FROM usuario WHERE idAdmin = ".$id." AND nivel = 1";
+    $sql = "DELETE FROM evento WHERE id = ".$id."";
 
     $conn->query($sql);
 
     $conn->close();
+    	echo "<script language='javascript' type='text/javascript'>"
+        . "alert('Evento excluído com sucesso!');";
+
+            echo "</script>";
+        echo "<script language='javascript' type='text/javascript'>
+window.location.href = 'javascript:window.history.go(-1);';
+</script>";
     
 }
