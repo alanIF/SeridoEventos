@@ -34,6 +34,7 @@ if (isset($_POST['usuario']) && isset($_POST['senha'])) {
             <div class="row">
                 <div class="col-sm-6 col-md-4 col-md-offset-4">
                     <div class="account-wall">
+                        <img src="../assets/img/Logo.png" width="250" height="250">
                         <div id="my-tab-content" class="tab-content">
                             <div class="tab-pane active" id="login">
                                 <img class="img-rounded" src="../imagens/logo.png"
@@ -48,12 +49,12 @@ if (isset($_POST['usuario']) && isset($_POST['senha'])) {
                                     <br>
                                     <br>
 
-                                    <input type="submit" name="logar" class="btn btn-lg btn-danger btn-block" value="Entrar" />
+                                    <input type="submit" name="logar" class="btn btn-lg btn-info btn-block" value="Entrar" />
 
-                                    <a href="./USER_Cadastrar.php"   class="btn btn-lg btn-danger btn-block">Cadastrar</a>
+                                    <a href="./Usuario_Cadastro.php"   class="btn btn-lg btn-info btn-block">Cadastrar</a>
 
                                 </form>
-                                 <a class="col-sm-2 col-md-8 col-md-offset-2" href="#"><h4>Esquecei minha senha</h4></a>
+                                 <!--<a class="col-sm-2 col-md-8 col-md-offset-2" href="#"><h4>Esquecei minha senha</h4></a>-->
                             </div>        
                           </div>
                     </div>
