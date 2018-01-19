@@ -54,7 +54,6 @@ function editarUsuario($nome, $email, $instituicao, $senha, $id) {
 
     if ($conn->query($sql) === TRUE) {
         Alert("Oba!", "Dados atualizados com sucesso", "success");
-        echo "<a href='Usuario_listar.php'> Voltar a lista Usuário</a>";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

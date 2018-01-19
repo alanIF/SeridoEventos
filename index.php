@@ -36,9 +36,7 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right navbar-uppercase">
-                        <li>
-                            <a href="#" target="_blank">ALGUMA COISA</a>
-                        </li>
+                     
                         <li class="dropdown">
                             <a href="#gaia" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-share-alt"></i> Redes Sociais
@@ -55,8 +53,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li> <a href="View/" class="btn btn-danger btn-fill"> Entrar por login</a></li>
-                        <li><a data-toggle="modal" data-target="#myModal" class="btn btn-danger btn-fill">Entrar por Modal, ta bugado nao ta direcionando certo</a></li>
+                        <li> <a href="View/" class="btn btn-danger btn-fill"> Entrar</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
