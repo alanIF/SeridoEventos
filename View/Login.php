@@ -37,8 +37,6 @@ if (isset($_POST['usuario']) && isset($_POST['senha'])) {
                         <img src="../assets/img/Logo.png" width="250" height="250">
                         <div id="my-tab-content" class="tab-content">
                             <div class="tab-pane active" id="login">
-                                <img class="img-rounded" src="../imagens/logo.png"
-                                     alt="">
                                 <form class="form-signin" action="" method="post">
                                     <input type="email" name="usuario" class="form-control"   placeholder="E-mail" required autofocus>
 
@@ -54,7 +52,7 @@ if (isset($_POST['usuario']) && isset($_POST['senha'])) {
                                     <a href="./Usuario_Cadastro.php"   class="btn btn-lg btn-info btn-block">Cadastrar</a>
 
                                 </form>
-                                 <!--<a class="col-sm-2 col-md-8 col-md-offset-2" href="#"><h4>Esquecei minha senha</h4></a>-->
+                                <a class="col-sm-2 col-md-8 col-md-offset-2" href="RecuperarSenha.php"><h4>Esquecei minha senha</h4></a>
                             </div>        
                           </div>
                     </div>
