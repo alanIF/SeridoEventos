@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+ <?php 
+                    require './Model/Calendar.php';
+                    require './Model/connect.php';
+                    $eventos = allEventos();
+                    $tam = count($eventos);
+?>
 <html lang="en">
 
     <head>
@@ -16,11 +22,50 @@
         <link href='https://fonts.googleapis.com/css?family=Cambo|Poppins:400,600' rel='stylesheet' type='text/css'>
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
         <link href="assets/css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
-   <style>
+       
+        <link href='assets/css/fullcalendar.min.css' rel='stylesheet' />
+	<link href='assets/css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+        
+        <link href='assets/css/personalizado.css' rel='stylesheet' />
+        <script src='assets/js/moment.min.js'></script>
+	<script src='assets/js/jquery.min.js'></script>
+	<script src='assets/js/fullcalendar.min.js'></script>
+	<script src='assets/locale/pt-br.js'></script>
+ <style>
 #paginacao {
         color:white;
 }
 </style>
+<script>
+			$(document).ready(function() {
+				$('#calendario').fullCalendar({
+					header: {
+						left: 'prev,next today',
+						center: 'title',
+						right: 'month,agendaWeek,agendaDay'
+						
+					},
+					defaultDate: Date(),
+					navLinks: true, // can click day/week names to navigate views
+					editable: true,
+					eventLimit: true, // allow "more" link when too many events
+					events: [
+						<?php for($i=0; $i < $tam; $i++){ ?>
+								{
+								id: '<?php echo $eventos[$i]['id']; ?>',
+								title: '<?php echo $eventos[$i]['titulo']; ?>',
+								start: '<?php echo $eventos[$i]['inicio_evento']; ?>',
+								end: '<?php echo $eventos[$i]['fim_evento']; ?>',
+								color: '<?php echo $eventos[$i]['cor']; ?>',
+								},
+                                                <?php
+							}
+						?>
+					]
+				});
+			});
+                         $('#calendario').display = "block";
+		</script> 
     </head>
 
     <body>
@@ -90,40 +135,13 @@
 
         <div class="section">
             <div class="container">
+                
                 <div class="row">
                     <div class="title-area">
-                        <h2>Instituições Parceiras</h2>
+                        <h2>Calendário</h2>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="info-icon">
-                            <div class="icon text-danger">
-                                <i class="pe-7s-graph1"></i>
-                            </div>
-                            <h3>UFRN</h3>
-                            <p class="description">Universidade Federal do Rio Grande do Norte</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="info-icon">
-                            <div class="icon text-danger">
-                                <i class="pe-7s-note2"></i>
-                            </div>
-                            <h3>UERN</h3>
-                            <p class="description">Universidade do Estado do Rio Grande do Norte</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="info-icon">
-                            <div class="icon text-danger">
-                                <i class="pe-7s-music"></i>
-                            </div>
-                            <h3>UERN</h3>
-                            <p class="description">Universidade Estadual do Rio Grande do Norte</p>
-                        </div>
-                    </div>
-                </div>
+                    <div id='calendario' class=""></div>
+               </div>     
             </div>
         </div>
 
@@ -138,7 +156,7 @@
                             <div class="title-area">
                                 <h2>Próximos Eventos</h2>
                                 <div class="separator separator-danger">✻</div>
-                                <p class="description">Próximos Eventos Acadêmicos da Região do Seridó</p>
+                                <p class="description">Próximos Eventos Acadêmicos na Região do Seridó</p>
                             </div>
                         </div>
 
