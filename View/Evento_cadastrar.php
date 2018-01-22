@@ -6,6 +6,7 @@ require_once '../Controller/EventoController.php';
 if (isset($_POST["cadastrar"])) {
     $objControl = new EventoController();
 
+    $id_usuario=   $_SESSION['Usu_id'];
 
     date('Y-m-d H:i:s', strtotime($_POST['inicio']));
 

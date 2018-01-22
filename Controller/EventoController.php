@@ -12,7 +12,9 @@ Class EventoController{
     public function ListarEventos($usuario) {
         return listarEventos($usuario);
     }
-   
+    public function ListarEventosGeral() {
+        return listarEventosGeral();
+    }
      public function RecuperarEvento($id) {
         return RecuperarEvento($id);
     }

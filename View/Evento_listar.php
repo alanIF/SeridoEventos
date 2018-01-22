@@ -32,7 +32,9 @@ include ("topo.phtml");
 
                 </thead>
                 <tbody>
-                    <?php
+                    <?php                    
+
+                    
                     require '../Controller/EventoController.php';
                     $obj = new EventoController();
                     $vetor = $obj->ListarEventos($_SESSION['Usu_id']);

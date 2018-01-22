@@ -16,6 +16,11 @@
         <link href='https://fonts.googleapis.com/css?family=Cambo|Poppins:400,600' rel='stylesheet' type='text/css'>
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
         <link href="assets/css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
+   <style>
+#paginacao {
+        color:white;
+}
+</style>
     </head>
 
     <body>
@@ -59,73 +64,7 @@
                 <!-- /.navbar-collapse -->
             </div>
         </nav>
-        <!-- Modal -->
-        <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Login</h4>
-                    </div>
-                    <div class="modal-body">
-                        <?php
-                        if (isset($_POST['logar'])) {
-                            if (isset($_POST['usuario']) && isset($_POST['senha'])) {
-                                require './Controller/ConnectController.php';
-
-                                $usuario = htmlspecialchars($_POST['usuario'], ENT_QUOTES, 'UTF-8');
-                                $senha = htmlspecialchars($_POST['senha'], ENT_QUOTES, 'UTF-8');
-
-                                $login = new ConnectController();
-                                $login->RealizarLogin($usuario, $senha);
-                            }
-                        }
-                        ?>
-
-
-
-                        <div class="row">
-                            <div class="col-sm-6 col-md-4 col-md-offset-4">
-                                <div class="account-wall">
-                                    <div id="my-tab-content" class="tab-content">
-                                        <div class="tab-pane active" id="login">
-                                            <img class="img-rounded" src="../imagens/logo.png"
-                                                 alt="">
-                                            <form class="form-signin" action="" method="post">
-                                                <input type="email" name="usuario" class="form-control"   placeholder="E-mail" required autofocus>
-
-                                                <br>
-
-                                                <input type="password" name="senha" class="form-control" placeholder="Senha" required>
-
-                                                <br>
-                                                <br>
-
-                                                <input type="submit" name="logar" class="btn btn-lg btn-danger btn-block" value="Entrar" />
-
-                                                <a href="./USER_Cadastrar.php"   class="btn btn-lg btn-danger btn-block">Cadastrar</a>
-
-                                            </form>
-                                            <a class="col-sm-2 col-md-8 col-md-offset-2" href="#"><h4>Esquecei minha senha</h4></a>
-                                        </div>        
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+       
 
         <div class="section section-header">
             <div class="parallax filter filter-color-red">
@@ -153,9 +92,7 @@
             <div class="container">
                 <div class="row">
                     <div class="title-area">
-                        <h2>Sites Parceiros {PODE SER O CALENDÀRIO AQUI}</h2>
-                        <div class="separator separator-danger">✻</div>
-                        <p class="description">We promise you a new look and more importantly, a new attitude. We build that by getting to know you, your needs and creating the best looking clothes.</p>
+                        <h2>Instituições Parceiras</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -182,8 +119,8 @@
                             <div class="icon text-danger">
                                 <i class="pe-7s-music"></i>
                             </div>
-                            <h3>FCST</h3>
-                            <p class="description">Faculdade Católica Santa Teresinha</p>
+                            <h3>UERN</h3>
+                            <p class="description">Universidade Estadual do Rio Grande do Norte</p>
                         </div>
                     </div>
                 </div>
@@ -201,7 +138,7 @@
                             <div class="title-area">
                                 <h2>Próximos Eventos</h2>
                                 <div class="separator separator-danger">✻</div>
-                                <p class="description">We promise you a new look and more importantly, a new attitude. We build that by getting to know you, your needs and creating the best looking clothes.</p>
+                                <p class="description">Próximos Eventos Acadêmicos da Região do Seridó</p>
                             </div>
                         </div>
 
@@ -209,48 +146,87 @@
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1">
                                     <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="card card-member">
-                                                <div class="content">
-                                                    <div class="avatar avatar-danger">
-                                                        <img alt="..." class="img-circle" src="assets/img/faces/face_1.jpg"/>
-                                                    </div>
-                                                    <div class="description">
-                                                        <h3 class="title">Tina</h3>
-                                                        <p class="small-text">CEO / Co-Founder</p>
-                                                        <p class="description">I miss the old Kanye I gotta say at that time I’d like to meet Kanye And I promise the power is in the people and I will use the power given by the people to bring everything I have back to the people.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="card card-member">
-                                                <div class="content">
-                                                    <div class="avatar avatar-danger">
-                                                        <img alt="..." class="img-circle" src="assets/img/faces/face_4.jpg"/>
-                                                    </div>
-                                                    <div class="description">
-                                                        <h3 class="title">Andrew</h3>
-                                                        <p class="small-text">Product Designer</p>
-                                                        <p class="description">I miss the old Kanye I gotta say at that time I’d like to meet Kanye And I promise the power is in the people and I will use the power given by the people to bring everything I have back to the people.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="card card-member">
-                                                <div class="content">
-                                                    <div class="avatar avatar-danger">
-                                                        <img alt="..." class="img-circle" src="assets/img/faces/face_3.jpg"/>
-                                                    </div>
-                                                    <div class="description">
-                                                        <h3 class="title">Michelle</h3>
-                                                        <p class="small-text">Marketing Hacker</p>
-                                                        <p class="description">I miss the old Kanye I gotta say at that time I’d like to meet Kanye And I promise the power is in the people and I will use the power given by the people to bring everything I have back to the people.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
+                                       <ul class="nav nav-tabs">
+  
+     <?php
+                require_once './Model/connect.php';
+     $conn = F_conect();
+    $result = mysqli_query($conn, "Select * from evento ");
+    
+    $i = 0;
+    $eventos = array();
+    if (mysqli_num_rows($result)!=0) {
+        while ($row = $result->fetch_assoc()) {
+            $eventos[$i]['id'] = $row['id'];
+
+            $eventos[$i]['titulo'] = $row['titulo'];
+            $eventos[$i]['descricao'] = $row['descricao'];
+            $eventos[$i]['local_evento'] = $row['local_evento'];
+            $eventos[$i]['curso'] = $row['curso'];
+            $eventos[$i]['inicio_evento'] = $row['inicio_evento'];
+            $eventos[$i]['fim_evento'] = $row['fim_evento'];
+            $eventos[$i]['link_inscricao'] = $row['link_inscricao'];
+
+            $i++;
+        }
+    }
+    $conn->close();
+                    $tamanho =$i;
+                    $numero_paginacao=(int)($tamanho / 3);
+                    if ($numero_paginacao > 0) {
+                        for ($i = 0; $i <= $numero_paginacao; $i++) {
+                           $pagina=$i+1;
+                           echo "<li><a data-toggle='tab' href='#".$pagina."' id='paginacao' >Pagina ".$pagina."</a></li>";
+                        }
+                    }else{
+                          echo " <li class='active'><a data-toggle='tab' href='#1'  id='paginacao'>Página 1</a></li>";
+
+                        
+                    }
+                    ?>
+  
+ 
+  </ul>
+
+  <div class="tab-content">
+      
+        <br/>
+        <?php
+            $next_tab=1;
+            $contador=0;
+          for ($i = 0; $i < $tamanho; $i++) {
+              if($i==0){
+                  echo "<div id='".$next_tab."' class='tab-pane fade in active'>";
+                  $contador=0;
+              }
+              if($contador>2){
+                  $next_tab=$next_tab+1;
+                  echo "</div>";
+                  echo "<div id='".$next_tab."' class='tab-pane fade'>";
+                  $contador=0;
+              }
+              echo '<div class="col-md-4"><div class="card card-member"><div class="content"><div class="description">';
+              echo "<h3 class='title'>".$eventos[$i]['titulo']."</h3>";
+              echo "<p class='description'>".$eventos[$i]['descricao']."</p>";
+              echo "<p class='description'>Local Evento: ".$eventos[$i]['local_evento']."</p>";
+              echo "<p class='description'>Curso: ".$eventos[$i]['curso']."</p>";
+               echo "<p class='description'>Inicio do Evento: ".$eventos[$i]['inicio_evento']."</p>";
+               echo "<p class='description'><a href='".$eventos[$i]['link_inscricao']."'>Link para Inscrição</a></p></div></div></div></div>";
+
+
+                      $contador=$contador+1;   
+
+                            
+           }
+           
+               echo "</div>";
+           
+        ?>
+    
+  
+  </div>
+
 
                                     </div>
                                 </div>
