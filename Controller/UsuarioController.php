@@ -23,11 +23,10 @@ Class UsuarioController{
         header( "Location: Usuario_listar.php");
     }
     
-    public function EditarUsuario($nome, $email, $instituicao, $senha, $C_senha,$id) {
-        if($senha != NULL and $senha === $C_senha){
-            editarUsuario($nome, $email, $instituicao, $senha, $id);
+    public function EditarUsuario($nome, $email, $instituicao,$validacao,$tipo,$id) {
+            editarUsuario($nome, $email, $instituicao, $validacao,$tipo,$id);
             
-       }
+       
     }
     
 }    

@@ -18,7 +18,12 @@ function F_conect() {
         return $conn;
     }
 }
-
+function permissao(){
+    if($_SESSION['is_Admin']==1){
+        return TRUE;
+    }
+    return FALSE;
+}
 function Alert($titulo, $corpo, $tipo) {
     echo "<div class='alert alert-" . $tipo . " alert-dismissible fade in' role='alert'> <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span></button> <strong>" . $titulo . "</strong><BR/>" . $corpo . "</div>";
 }
@@ -35,12 +40,21 @@ function logar($email, $senha) {
             $id_usuario = $row["id"];
             $nome_usuario = $row["nome"];
             $instituicao = $row["instituicao"];
+            $is_Admin=  $row["isAdmin"];
+            $validacao=$row["validacao"];
+        }
+        if($validacao!=1){
+            $_SESSION['usuario'] = false;
+            $_SESSION['ativo'] = false;
+            Alert("Ops!", "A sua conta ainda não foi validada pelos Administradores, aguarde!!!", "danger");
+            return false;
         }
         //fim teste
         $_SESSION['Usu_email'] = $email;
         $_SESSION['Usu_nome'] = $nome_usuario;
         $_SESSION['Usu_id'] = $id_usuario;
         $_SESSION['Usu_inst'] = $instituicao;
+        $_SESSION['is_Admin'] =   $is_Admin;
         $_SESSION['ativo'] = true;
 
         header('Location: ../View/Menu.php');

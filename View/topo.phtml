@@ -87,13 +87,17 @@
                         <p>Meus Eventos</p>
                     </a>
                 </li>
+                <?php
+                if(permissao()==TRUE){
+                   echo'
                 <li>
                     <a href="Usuario_listar.php">
                         <i class=" ti-user"></i>
                         <p>Usuários</p>
                     </a>
-                </li>
-              
+                </li>';
+                }
+              ?>
                      <li>
                     <a href="profile.php">
                         <i class=" ti-user"></i>

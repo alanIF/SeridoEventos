@@ -21,6 +21,9 @@ function listarUsuarios() {
         while ($row = $result->fetch_assoc()) {
             $users[$i]['NOME'] = $row['nome'];
             $users[$i]['EMAIL'] = $row['email'];
+            $users[$i]['VALIDACAO'] = $row['validacao'];
+            $users[$i]['ADMIN'] = $row['isAdmin'];
+
             $users[$i]['ID_USU'] = $row['id'];
             $i++;
         }
@@ -47,10 +50,10 @@ function RecuperarUsuarios_Editar($id) {
     return $users;
 }
 
-function editarUsuario($nome, $email, $instituicao, $senha, $id) {
+function editarUsuario($nome, $email, $instituicao,$validacao,$tipo, $id) {
     $conn = F_conect();
     $sql = " UPDATE usuario SET  nome='" . $nome . "', email='" . $email . " ', instituicao='" .
-            $instituicao . "', senha='" . $senha . " ' WHERE id= " . $id;
+            $instituicao . "',validacao='".$validacao."', isAdmin='".$tipo."' WHERE id= " . $id;
 
     if ($conn->query($sql) === TRUE) {
         Alert("Oba!", "Dados atualizados com sucesso", "success");

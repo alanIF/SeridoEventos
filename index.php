@@ -228,7 +228,7 @@
               echo "<p class='description'>Local Evento: ".$eventos[$i]['local_evento']."</p>";
               echo "<p class='description'>Curso: ".$eventos[$i]['curso']."</p>";
                echo "<p class='description'>Inicio do Evento: ".$eventos[$i]['inicio_evento']."</p>";
-               echo "<p class='description'><a href='".$eventos[$i]['link_inscricao']."'>Link para Inscrição</a></p></div></div></div></div>";
+               echo "<p class='description'><a href='http://".$eventos[$i]['link_inscricao']."'  target='window'>Link para Inscrição</a></p></div></div></div></div>";
 
 
                       $contador=$contador+1;   
@@ -257,7 +257,7 @@
         <div class="section section-our-clients-freebie">
             <div class="container">
                 <div class="title-area">
-                    <h5 class="subtitle text-gray">Universitários [Pode ser também as instituições parceiras...]</h5>
+                    <h5 class="subtitle text-gray">Universitários </h5>
                     <h2>Desenvolvedores</h2>
                     <div class="separator separator-danger">∎</div>
                 </div>
@@ -283,7 +283,9 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="testimonial1">
                         <p class="description">
-                            Aqui tem o resumo de Alan
+                            Tecnico em Informática pelo IFRN.<br/>
+                            Tecnico em TI na enfasê Informatica para Internet e Redes pelo IMD.
+                            Graduando em Sistemas de Informação pela UFRN.
                         </p>
                     </div>
                     <div class="tab-pane" id="testimonial2">
@@ -301,121 +303,30 @@
         </div>
 
 
-        <div class="section section-small section-get-started">
-            <div class="parallax filter">
-                <div class="image"
-                     style="background-image: url('assets/img/office-1.jpeg')">
-                </div>
-                <div class="container">
-                    <div class="title-area">
-                        <h2 class="text-white">Do you want to work with us?</h2>
-                        <div class="separator line-separator">♦</div>
-                        <p class="description"> We are keen on creating a second skin for anyone with a sense of style! We design our clothes having our customers in mind and we never disappoint!</p>
-                    </div>
-
-                    <div class="button-get-started">
-                        <a href="#gaia" class="btn btn-danger btn-fill btn-lg">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+ 
 
 
         <footer class="footer footer-big footer-color-black" data-color="black">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2 col-sm-3">
-                        <div class="info">
-                            <h5 class="title">Company</h5>
-                            <nav>
-                                <ul>
-                                    <li>
-                                        <a href="#">Home</a></li>
-                                    <li>
-                                        <a href="#">Find offers</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Discover Projects</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Our Portfolio</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">About Us</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-md-offset-1 col-sm-3">
-                        <div class="info">
-                            <h5 class="title"> Help and Support</h5>
-                            <nav>
-                                <ul>
-                                    <li>
-                                        <a href="#">Contact Us</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">How it works</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Terms &amp; Conditions</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Company Policy</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Money Back</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3">
-                        <div class="info">
-                            <h5 class="title">Latest News</h5>
-                            <nav>
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-twitter"></i> <b>Get Shit Done</b> The best kit in the market is here, just give it a try and let us...
-                                            <hr class="hr-small">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-twitter"></i> We've just been featured on <b> Awwwards Website</b>! Thank you everybody for...
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
+                 
+                   
                     <div class="col-md-2 col-md-offset-1 col-sm-3">
                         <div class="info">
-                            <h5 class="title">Follow us on</h5>
+                            <h5 class="title">Segui-nos</h5>
                             <nav>
                                 <ul>
                                     <li>
-                                        <a href="#" class="btn btn-social btn-facebook btn-simple">
+                                        <a href="https://www.facebook.com/groups/239083846144738/" class="btn btn-social btn-facebook btn-simple">
                                             <i class="fa fa-facebook-square"></i> Facebook
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="#" class="btn btn-social btn-dribbble btn-simple">
-                                            <i class="fa fa-dribbble"></i> Dribbble
+                                  <li>
+                                        <a href="http://4bsi.000webhostapp.com" class="btn btn-social btn-facebook btn-simple">
+                                            <i class="fa fa-facebook-square"></i> Equipe de Desenvolvedores 4teto
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="#" class="btn btn-social btn-twitter btn-simple">
-                                            <i class="fa fa-twitter"></i> Twitter
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="btn btn-social btn-reddit btn-simple">
-                                            <i class="fa fa-google-plus-square"></i> Google+
-                                        </a>
-                                    </li>
+                                   
                                 </ul>
                             </nav>
                         </div>
@@ -423,7 +334,7 @@
                 </div>
                 <hr>
                 <div class="copyright">
-                    © <script> document.write(new Date().getFullYear())</script> Creative Tim, made with love
+                    © <script> document.write(new Date().getFullYear())</script> Desenvolvido por Alan Tavares e Janailton Galvão.
                 </div>
             </div>
         </footer>

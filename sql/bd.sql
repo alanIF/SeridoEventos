@@ -10,6 +10,7 @@ create table usuario(
 	senha varchar(200) not null,
 	instituicao varchar(200) not null,
 	validacao int,
+	isAdmin int,
 	primary key(id)
 );
 /*
