@@ -2,8 +2,8 @@
  <?php 
                     require './Model/Calendar.php';
                     require './Model/connect.php';
-                    $eventos = allEventos();
-                    $tam = count($eventos);
+                    $evts = allEventos();
+                    $tam = count($evts);
 ?>
 <html lang="en">
 
@@ -52,11 +52,11 @@
 					events: [
 						<?php for($i=0; $i < $tam; $i++){ ?>
 								{
-								id: '<?php echo $eventos[$i]['id']; ?>',
-								title: '<?php echo $eventos[$i]['titulo']; ?>',
-								start: '<?php echo $eventos[$i]['inicio_evento']; ?>',
-								end: '<?php echo $eventos[$i]['fim_evento']; ?>',
-								color: '<?php echo $eventos[$i]['cor']; ?>',
+								id: '<?php echo $evts[$i]['id']; ?>',
+								title: '<?php echo $evts[$i]['titulo']; ?>',
+								start: '<?php echo $evts[$i]['inicio_evento']; ?>',
+								end: '<?php echo $evts[$i]['fim_evento']; ?>',
+								color: '<?php echo $evts[$i]['cor']; ?>',
 								},
                                                 <?php
 							}
@@ -64,7 +64,6 @@
 					]
 				});
 			});
-                         $('#calendario').display = "block";
 		</script> 
     </head>
 
@@ -125,7 +124,7 @@
                             <div class="separator line-separator">♦</div>
                         </div>
 
-                        <div>AQUI FICA O CALENDÁRIO</div>
+                        <div></div>
                     </div>
 
                 </div>
@@ -137,10 +136,9 @@
             <div class="container">
                 
                 <div class="row">
-                    <div class="title-area">
-                        <h2>Calendário</h2>
+                    <div class="col-md-10 col-md-offset-1">
+                    <div id='calendario'></div>
                     </div>
-                    <div id='calendario' class=""></div>
                </div>     
             </div>
         </div>
@@ -259,7 +257,7 @@
         <div class="section section-our-clients-freebie">
             <div class="container">
                 <div class="title-area">
-                    <h5 class="subtitle text-gray">Universitários</h5>
+                    <h5 class="subtitle text-gray">Universitários [Pode ser também as instituições parceiras...]</h5>
                     <h2>Desenvolvedores</h2>
                     <div class="separator separator-danger">∎</div>
                 </div>
@@ -268,21 +266,14 @@
                     <li class="active">
                         <a href="#testimonial1" role="tab" data-toggle="tab">
                             <div class="image-clients">
-                                <img alt="..." class="img-circle" src="assets/img/faces/face_5.jpg"/>
+                                <img alt="..." class="img-circle" src="assets/img/faces/face_8.jpg"/>
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="#testimonial2" role="tab" data-toggle="tab">
                             <div class="image-clients">
-                                <img alt="..." class="img-circle" src="assets/img/faces/face_6.jpg"/>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#testimonial3" role="tab" data-toggle="tab">
-                            <div class="image-clients">
-                                <img alt="..." class="img-circle" src="assets/img/faces/face_2.jpg"/>
+                                <img alt="..." class="img-circle" src="assets/img/faces/face_7.jpg"/>
                             </div>
                         </a>
                     </li>
@@ -292,11 +283,11 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="testimonial1">
                         <p class="description">
-                            And I used a period because contrary to popular belief I strongly dislike exclamation points! We no longer have to be scared of the truth feels good to be home In Roman times the artist would contemplate proportions and colors. Now there is only one important color... Green I even had the pink polo I thought I was Kanye I promise I will never let the people down. I want a better life for all!
+                            Aqui tem o resumo de Alan
                         </p>
                     </div>
                     <div class="tab-pane" id="testimonial2">
-                        <p class="description">Green I even had the pink polo I thought I was Kanye I promise I will never let the people down. I want a better life for all! And I used a period because contrary to popular belief I strongly dislike exclamation points! We no longer have to be scared of the truth feels good to be home In Roman times the artist would contemplate proportions and colors. Now there is only one important color...
+                        <p class="description"> Aqui tem o resumo de Janailton
                         </p>
                     </div>
                     <div class="tab-pane" id="testimonial3">
@@ -440,7 +431,8 @@
     </body>
 
     <!--   core js files    -->
-    <script src="assets/js/jquery.min.js" type="text/javascript"></script>
+    <!--ESSE TANSO DE BAIXO QUE DAVA ERRO-->
+<!--    <script src="assets/js/jquery.min.js" type="text/javascript"></script>--> 
     <script src="assets/js/bootstrap.js" type="text/javascript"></script>
 
     <!--  js library for devices recognition -->
