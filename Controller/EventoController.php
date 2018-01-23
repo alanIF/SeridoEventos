@@ -2,11 +2,11 @@
      require_once '../Model/Evento.php';
 Class EventoController{
     
-    public function CadastrarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id_usuario) {
+    public function CadastrarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id_usuario,$rua,$numero,$bairro,$cidade,$uf) {
 		$inicio =date('Y-m-d H:i:s', strtotime($inicio));
 		$fim =date('Y-m-d H:i:s', strtotime($fim));
 
-       return cadastrarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id_usuario);
+       return cadastrarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id_usuario,$rua,$numero,$bairro,$cidade,$uf);
     }
     
     public function ListarEventos($usuario) {

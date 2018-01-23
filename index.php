@@ -222,13 +222,13 @@
                   echo "<div id='".$next_tab."' class='tab-pane fade'>";
                   $contador=0;
               }
-              echo '<div class="col-md-4"><div class="card card-member"><div class="content"><div class="description">';
+              echo '<div class="col-md-4"><a href="detalhes.php?idevento='.$eventos[$i]['id'].'"><div class="card card-member"><div class="content"><div class="description">';
               echo "<h3 class='title'>".$eventos[$i]['titulo']."</h3>";
               echo "<p class='description'>".$eventos[$i]['descricao']."</p>";
               echo "<p class='description'>Local Evento: ".$eventos[$i]['local_evento']."</p>";
               echo "<p class='description'>Curso: ".$eventos[$i]['curso']."</p>";
                echo "<p class='description'>Inicio do Evento: ".$eventos[$i]['inicio_evento']."</p>";
-               echo "<p class='description'><a href='http://".$eventos[$i]['link_inscricao']."'  target='window'>Link para Inscrição</a></p></div></div></div></div>";
+               echo "<p class='description'><a href='http://".$eventos[$i]['link_inscricao']."'  target='window'>Link para Inscrição</a></p></div></div></div></a></div>";
 
 
                       $contador=$contador+1;   
@@ -283,13 +283,15 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="testimonial1">
                         <p class="description">
-                            Tecnico em Informática pelo IFRN.<br/>
-                            Tecnico em TI na enfasê Informatica para Internet e Redes pelo IMD.
+                            Técnico em Informática pelo IFRN.<br/>
+                            Técnico em TI na enfasê Informatica para Internet e Redes pelo IMD.
                             Graduando em Sistemas de Informação pela UFRN.
                         </p>
                     </div>
                     <div class="tab-pane" id="testimonial2">
-                        <p class="description"> Aqui tem o resumo de Janailton
+                        <p class="description"> 
+                             Técnico em Informática pelo IFRN.<br/>
+                            Graduando em Sistemas de Informação pela UFRN.
                         </p>
                     </div>
                     <div class="tab-pane" id="testimonial3">

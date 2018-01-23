@@ -33,4 +33,15 @@ create table evento (
   primary key(id),
   foreign key(id_usuario) references usuario(id)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*
+Tabela destinada a localização Google Maps
+*/
 
+CREATE TABLE `markers` (
+  `id` INT NOT NULL PRIMARY KEY ,
+  `name` VARCHAR( 60 ) NOT NULL ,
+  `address` VARCHAR( 80 ) NOT NULL ,
+  `lat` FLOAT( 10, 6 ) NOT NULL ,
+  `lng` FLOAT( 10, 6 ) NOT NULL ,
+  `type` VARCHAR( 30 ) NOT NULL
+) ENGINE = MYISAM ;

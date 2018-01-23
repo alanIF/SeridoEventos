@@ -1,18 +1,33 @@
 <?php
      require_once '../Model/connect.php';
 
-function cadastrarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id_usuario) {
+function cadastrarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id_usuario, $rua,$numero,$bairro,$cidade,$uf) {
     $conn = F_conect();
-    $sql = "INSERT INTO evento(titulo, descricao, link_inscricao,local_evento,curso,cor,inicio_evento,fim_evento,id_usuario)
-            VALUES('" . $titulo . "','" . $descricao . "','" . $link . "','" . $local . "','".$curso."','".$cor."','".$inicio."','".$fim."','".$id_usuario."')";
-    if ($conn->query($sql) == TRUE) {
-        Alert("Oba!", "Evento cadastrado com sucesso <br/> <a href='Evento_listar.php'> Listar seus Eventos</a>", "success");
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-
-    $conn->close();
+    $geocode = file_get_contents('http://maps.google.com/maps/api/geocode/json?address='.urlencode($rua).'+'.urlencode($numero).'+'.urlencode($bairro).'+'.urlencode($cidade).'+'.($uf).'&sensor=false');
+    $output= json_decode($geocode);
+    $lat= @$output->results[0]->geometry->location->lat;
+    $long = @$output->results[0]->geometry->location->lng;
+    if(isset($lat) AND isset($long)){
+        //CADASTRO EVENTO
+        $sql = "INSERT INTO evento(titulo, descricao, link_inscricao,local_evento,curso,cor,inicio_evento,fim_evento,id_usuario)
+                VALUES('" . $titulo . "','" . $descricao . "','" . $link . "','" . $local . "','".$curso."','".$cor."','".$inicio."','".$fim."','".$id_usuario."')";
+        if ($conn->query($sql) == TRUE) {
+            Alert("Oba!", "Evento cadastrado com sucesso <br/> <a href='Evento_listar.php'> Listar seus Eventos</a>", "success");
+            $last = $conn->insert_id;
+            //SE DEU CERTO ... CADASTRAR LOCAL 
+            $sql2 ='INSERT INTO markers (id, name, address, lat, lng, type) VALUES('.$last.',"'.$titulo.'","'.$rua.'-'.$numero.'",'.$lat.','.$long.',"'.$local.'")';
+            if($conn->query($sql2) == TRUE){
+                 Alert("Oba!", "Evendo cadastrado no Google Maps!", "success");
+            }
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+        }else{
+            Alert("Ops!", "Google Maps não encontrou este endereço, por favor verifique e tente novamente!", "danger");
+	}       
+            $conn->close();            
 }
+
 function listarEventosGeral() {
     $conn = F_conect();
     $result = mysqli_query($conn, "Select * from evento ");
