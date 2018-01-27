@@ -49,7 +49,7 @@
 					navLinks: true, // can click day/week names to navigate views
 					editable: true,
 					eventLimit: true, // allow "more" link when too many events
-					events: [
+                                        events: [
 						<?php for($i=0; $i < $tam; $i++){ ?>
 								{
 								id: '<?php echo $evts[$i]['id']; ?>',
@@ -57,6 +57,7 @@
 								start: '<?php echo $evts[$i]['inicio_evento']; ?>',
 								end: '<?php echo $evts[$i]['fim_evento']; ?>',
 								color: '<?php echo $evts[$i]['cor']; ?>',
+								url: 'detalhes.php?idevento=<?php echo $evts[$i]['id']; ?>#det_',
 								},
                                                 <?php
 							}
@@ -222,7 +223,7 @@
                   echo "<div id='".$next_tab."' class='tab-pane fade'>";
                   $contador=0;
               }
-              echo '<div class="col-md-4"><a href="detalhes.php?idevento='.$eventos[$i]['id'].'"><div class="card card-member"><div class="content"><div class="description">';
+              echo '<div class="col-md-4"><a href="detalhes.php?idevento='.$eventos[$i]['id'].'#det_"><div class="card card-member"><div class="content"><div class="description">';
               echo "<h3 class='title'>".$eventos[$i]['titulo']."</h3>";
               echo "<p class='description'>".$eventos[$i]['descricao']."</p>";
               echo "<p class='description'>Local Evento: ".$eventos[$i]['local_evento']."</p>";
