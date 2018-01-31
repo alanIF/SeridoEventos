@@ -13,7 +13,7 @@
         <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Seridó Eventos</title>
+        <title>Seridó Eventos Universitários</title>
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
         <link href="assets/css/bootstrap.css" rel="stylesheet" />
         <link href="assets/css/gaia.css" rel="stylesheet"/>
@@ -114,7 +114,7 @@
         <div class="section section-header">
             <div class="parallax filter filter-color-red">
                 <div class="image"
-                     style="background-image: url('assets/img/header-1.jpeg')">
+                     style="background-image: url('assets/img/header-2.jpeg')">
                 </div>
                 <div class="container">
                     <div class="content">
@@ -153,9 +153,9 @@
                     <div class="content">
                         <div class="row">
                             <div class="title-area">
-                                <h2>Próximos Eventos</h2>
+                                <h2>Próximos Eventos Universitários</h2>
                                 <div class="separator separator-danger">✻</div>
-                                <p class="description">Próximos Eventos Acadêmicos na Região do Seridó</p>
+                                <p class="description">Próximos Eventos Universitários na Região do Seridó</p>
                             </div>
                         </div>
 
@@ -169,7 +169,7 @@
      <?php
                 require_once './Model/connect.php';
      $conn = F_conect();
-    $result = mysqli_query($conn, "Select * from evento ");
+    $result = mysqli_query($conn, "Select * from evento order by fim_evento DESC");
     
     $i = 0;
     $eventos = array();
