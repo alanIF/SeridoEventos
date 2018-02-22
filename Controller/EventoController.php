@@ -18,12 +18,14 @@ Class EventoController{
      public function RecuperarEvento($id) {
         return RecuperarEvento($id);
     }
-    
-      public function AtualizarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id) {
+    public function RecuperarEventoLocal($id) {
+        return RecuperarEventoLocal($id);
+    }
+      public function AtualizarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id,$rua,$numero,$bairro,$cidade,$uf) {
 		$inicio =date('Y-m-d H:i:s', strtotime($inicio));
 		$fim =date('Y-m-d H:i:s', strtotime($fim));
 
-       return atualizarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id);
+       return atualizarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id,$rua,$numero,$bairro,$cidade,$uf);
     }
      public function excluir_Evento($id) {
         excluir_Evento($id);

@@ -99,18 +99,48 @@ function RecuperarEvento($id) {
     $conn->close();
     return $eventos;
 }
-
-function atualizarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id) {
+function RecuperarEventoLocal($id) {
     $conn = F_conect();
-    $sql = " UPDATE evento SET  titulo='" . $titulo . "', curso='" . $curso . " ', link_inscricao='" .
-            $link . "', inicio_evento='" . $inicio . " ', fim_evento='".$fim."', local_evento='".$local."', cor='".$cor."'  WHERE id = " . $id;
+    $result = mysqli_query($conn, "Select * from markers WHERE id =".$id);
+    
+    $i = 0;
+    $eventos = array();
+    if (mysqli_num_rows($result)!=0) {
+        while ($row = $result->fetch_assoc()) {
 
-    if ($conn->query($sql) === TRUE) {
-        Alert("Oba!", "Dados atualizados com sucesso", "success");
-        echo "<a href='Evento_listar.php'> Voltar a lista de seus eventos</a>";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+            $eventos[$i]['address'] = $row['address'];
+            
+            $i++;
+        }
     }
+    $conn->close();
+    return $eventos;
+}
+function atualizarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id,$rua,$numero,$bairro,$cidade,$uf) {
+    $conn = F_conect();
+    $geocode = file_get_contents('http://maps.google.com/maps/api/geocode/json?address='.urlencode($rua).'+'.urlencode($numero).'+'.urlencode($bairro).'+'.urlencode($cidade).'+'.($uf).'&sensor=false');
+    $output= json_decode($geocode);
+    $lat= @$output->results[0]->geometry->location->lat;
+    $long = @$output->results[0]->geometry->location->lng;
+    
+  if(isset($lat) AND isset($long)){
+        //Atualizar EVENTO
+        $sql = " UPDATE evento SET  titulo='" . $titulo . "', curso='" . $curso . " ', link_inscricao='" .
+            $link . "', inicio_evento='" . $inicio . " ', fim_evento='".$fim."', local_evento='".$local."', cor='".$cor."'  WHERE id = " . $id;
+        if ($conn->query($sql) == TRUE) {
+            Alert("Oba!", "Evento atualizado com sucesso <br/> <a href='Evento_listar.php'> Listar seus Eventos</a>", "success");
+            $last = $id;
+            //SE DEU CERTO ... Atualizar LOCAL  
+        $sql2= "update markers set name='".$titulo."',address='".$rua."-".$numero."',lat='".$lat."',lng='".$long."',type='".$local."' where id=".$id;
+            if($conn->query($sql2) == TRUE){
+                 Alert("Oba!", "Evendo Atualizado no Google Maps!", "success");
+            }
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+        }else{
+            Alert("Ops!", "Google Maps não encontrou este endereço, por favor verifique e tente novamente!", "danger");
+	} 
     $conn->close();
 }
 
