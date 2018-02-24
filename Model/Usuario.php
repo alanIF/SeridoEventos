@@ -63,6 +63,18 @@ function editarUsuario($nome, $email, $instituicao,$validacao,$tipo, $id) {
     $conn->close();
 }
 
+function editarPerfil ($nome, $email, $inst, $senha, $id){
+     $conn = F_conect();
+     $sql = " UPDATE usuario SET  nome='" . $nome . "', email='" . $email . " ', instituicao='" .
+            $inst . "',senha='".$senha."' WHERE id= " . $id;
+     if ($conn->query($sql) === TRUE) {
+        Alert("Oba!", "Dados atualizados com sucesso", "success");
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    $conn->close();
+}
+
 function excluir_Usuario($id) {
 
     $conn = F_conect();

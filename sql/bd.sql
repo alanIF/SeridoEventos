@@ -28,6 +28,8 @@ create table evento (
   local_evento text not null,
   curso text not null,
   cor varchar(220) not null,
+  cidade varchar(220) not null,
+  bairro varchar(220) not null,
   inicio_evento datetime not null,
   fim_evento datetime not null,
   primary key(id),

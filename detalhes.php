@@ -21,10 +21,10 @@ if (isset($_GET['idevento'])) {
             $link = $row_res2['link_inscricao'];
             $local = $row_res2['local_evento'];
             $ini_ev = date('d/m/Y',  strtotime($row_res2['inicio_evento']));
-            $fim_ev = date('d-m-Y', strtotime($row_res2['fim_evento']));
+            $fim_ev = date('d/m/Y', strtotime($row_res2['fim_evento']));
         }
         if(empty($link)){
-            $link = "O eveneto não possui web site.";
+            $link = "O evento não possui web site.";
         }
         ?>
         <html lang="en">
@@ -35,7 +35,7 @@ if (isset($_GET['idevento'])) {
                 <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
 
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-                <title>Seridó Eventos</title>
+                <title>Seridó Eventos Universitários</title>
                 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
                 <link href="assets/css/bootstrap.css" rel="stylesheet" />
                 <link href="assets/css/gaia.css" rel="stylesheet"/>
@@ -145,7 +145,7 @@ if (isset($_GET['idevento'])) {
                         <span class="icon-bar bar3"></span>
                     </button>
                     <a href="index.php" class="navbar-brand">
-                        Seridó Eventos
+                        Seridó Eventos Universitários
                     </a>
                 </div>
                 <div class="collapse navbar-collapse">
@@ -178,7 +178,7 @@ if (isset($_GET['idevento'])) {
         <div class="section section-header">
             <div class="parallax filter filter-color-red">
                 <div class="image"
-                     style="background-image: url('assets/img/header-1.jpeg')">
+                     style="background-image: url('assets/img/header-2.jpeg')">
                 </div>
                 <div class="container">
                     <div class="content">

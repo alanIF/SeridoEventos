@@ -12,11 +12,9 @@
     $email = $vet[0]['EMAIL'];
     $senha = $vet[0]['SENHA'];
   
- 
-            require_once '../Controller/UsuarioController.php';
             if (isset($_POST["cadastrar"])) {
                 $objControl = new UsuarioController();
-                $objControl->EditarUsuario($_POST["nome"], $_POST["email"], $_POST["instit"], $_POST["senha"], $_POST["C_senha"], $id);
+                $objControl->EditarPerfil($_POST["nome"], $_POST["email"], $_POST["instit"], $_POST["senha"], $_POST["C_senha"], $id);
             }
         ?> 
         <br />

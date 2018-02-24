@@ -9,8 +9,8 @@ function cadastrarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao
     $long = @$output->results[0]->geometry->location->lng;
     if(isset($lat) AND isset($long)){
         //CADASTRO EVENTO
-        $sql = "INSERT INTO evento(titulo, descricao, link_inscricao,local_evento,curso,cor,inicio_evento,fim_evento,id_usuario)
-                VALUES('" . $titulo . "','" . $descricao . "','" . $link . "','" . $local . "','".$curso."','".$cor."','".$inicio."','".$fim."','".$id_usuario."')";
+        $sql = "INSERT INTO evento(titulo, descricao, link_inscricao,local_evento,curso,cor,bairro,cidade,inicio_evento,fim_evento,id_usuario)
+                VALUES('" . $titulo . "','" . $descricao . "','" . $link . "','" . $local . "','".$curso."','".$cor."','".$bairro."','".$cidade."','".$inicio."','".$fim."','".$id_usuario."')";
         if ($conn->query($sql) == TRUE) {
             Alert("Oba!", "Evento cadastrado com sucesso <br/> <a href='Evento_listar.php'> Listar seus Eventos</a>", "success");
             $last = $conn->insert_id;
@@ -93,6 +93,8 @@ function RecuperarEvento($id) {
             $eventos[$i]['inicio_evento'] = $row['inicio_evento'];
             $eventos[$i]['fim_evento'] = $row['fim_evento'];
             $eventos[$i]['link_inscricao'] = $row['link_inscricao'];
+            $eventos[$i]['bairro'] = $row['bairro'];
+            $eventos[$i]['cidade'] = $row['cidade'];
             $i++;
         }
     }
@@ -126,7 +128,7 @@ function atualizarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao
   if(isset($lat) AND isset($long)){
         //Atualizar EVENTO
         $sql = " UPDATE evento SET  titulo='" . $titulo . "', curso='" . $curso . " ', link_inscricao='" .
-            $link . "', inicio_evento='" . $inicio . " ', fim_evento='".$fim."', local_evento='".$local."', cor='".$cor."'  WHERE id = " . $id;
+            $link . "', inicio_evento='" . $inicio . " ', fim_evento='".$fim."', local_evento='".$local."', cor='".$cor."', bairro='".$bairro."', cidade='".$cidade."', descricao='".$descricao."'  WHERE id = " . $id;
         if ($conn->query($sql) == TRUE) {
             Alert("Oba!", "Evento atualizado com sucesso <br/> <a href='Evento_listar.php'> Listar seus Eventos</a>", "success");
             $last = $id;

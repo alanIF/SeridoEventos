@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title> Seridó Eventos - Recuperar Senha </title>
+        <title> Seridó Eventos Universitários - Recuperar Senha </title>
         <!-- BOOTSTRAP STYLES-->
         <link href="../assets/css/bootstrap.css" rel="stylesheet" />
         <!-- Login CSS -->
@@ -31,7 +31,7 @@
                                 </div>
 
                                 <div class="col-lg-4 col-lg-offset-2">
-                                    <input type="submit" name="salvar" class="btn btn-lg btn-danger btn-block" value="Salvar" />
+                                    <input type="submit" name="salvar" class="btn btn-lg btn-danger btn-block" value="Solicitar" />
                                 </div>
 
                                 <div class="col-lg-4">  
@@ -62,7 +62,7 @@ if (isset($_POST['salvar']) && isset($_POST['email'])) {
 //RECEBENDO OS DADOS
 //MENSSAGEM
         $body = '<div>
-           <h4>Você solicitou a senha de acesso do sistema Seridó Eventos, caso nãa tenha realizado essa ação ignore este email.</h4>
+           <h4>Você solicitou a senha de acesso do sistema Seridó Eventos Universitários, caso nãa tenha realizado essa ação ignore este email.</h4>
            Sua senha de login é "<b>' . $SENHA . '</b>"
                Att: Sistema Seridó Eventos
         </div>';
@@ -75,13 +75,13 @@ if (isset($_POST['salvar']) && isset($_POST['email'])) {
 
 
         $host = 'smtp.gmail.com'; //EX: smtp.meusite.com.br
-        $username = ''; //EX:usuario@meusite.com >>>(Hostnet usa = no ludar de @)
-        $passoword = ''; //senha do email
+        $username = '4tetofantasticoBSI@gmail.com'; //EX:usuario@meusite.com >>>(Hostnet usa = no ludar de @)
+        $passoword = 'BSIvaidarcerto'; //senha do email
         $port = 587; //587
         $secure = 'tls'; // a segurança depende da hospedagem, tem que ver que a sua.
 
         $from = $username;
-        $fromnome = "Seridó Eventos";
+        $fromnome = "Seridó Eventos Universitários";
 
         $mail->isSMTP();
         $mail->Host = $host;
@@ -101,13 +101,13 @@ if (isset($_POST['salvar']) && isset($_POST['email'])) {
         $mail->CharSet = 'utf-8';
         $mail->WordWrap = 70;
 
-        $mail->Subject = 'Seridó Eventos - Recuperar Senha';
+        $mail->Subject = 'Seridó Eventos Universitários - Recuperar Senha';
         $mail->Body = $body; //Email com HTML
         $mail->AltBody = 'Erro na interpretação HTML';  // Email sem HTML (por segurança)
 //$mail ->addAttachment($arquivo['tmp_name'], $arquivo['name']);
 
         if ($mail->send()) {
-            echo 'Email enviado!!';
+             Alert("Oba!", "Um E-mail foi enviado, verifique sua caixa de entrada", "success");
         } else {
             echo 'Deu errado..' . $mail->ErrorInfo;
         }

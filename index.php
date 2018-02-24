@@ -81,7 +81,7 @@
                         <span class="icon-bar bar3"></span>
                     </button>
                     <a href="" class="navbar-brand">
-                        Seridó Eventos
+                        Seridó Eventos Universitários
                     </a>
                 </div>
                 <div class="collapse navbar-collapse">
@@ -181,8 +181,8 @@
             $eventos[$i]['descricao'] = $row['descricao'];
             $eventos[$i]['local_evento'] = $row['local_evento'];
             $eventos[$i]['curso'] = $row['curso'];
-            $eventos[$i]['inicio_evento'] = $row['inicio_evento'];
-            $eventos[$i]['fim_evento'] = $row['fim_evento'];
+            $eventos[$i]['inicio_evento'] = date('d/m/Y',  strtotime($row['inicio_evento']));
+            $eventos[$i]['fim_evento'] = date('d/m/Y',  strtotime($row['fim_evento']));
             $eventos[$i]['link_inscricao'] = $row['link_inscricao'];
 
             $i++;
@@ -229,8 +229,11 @@
               echo "<p class='description'>Local Evento: ".$eventos[$i]['local_evento']."</p>";
               echo "<p class='description'>Curso: ".$eventos[$i]['curso']."</p>";
                echo "<p class='description'>Inicio do Evento: ".$eventos[$i]['inicio_evento']."</p>";
+               if($eventos[$i]['link_inscricao'] != '#'){
                echo "<p class='description'><a href='http://".$eventos[$i]['link_inscricao']."'  target='window'>Link para Inscrição</a></p></div></div></div></a></div>";
-
+               }else{
+                   echo '</div></div></div></a></div>';
+               }
 
                       $contador=$contador+1;   
 
@@ -326,7 +329,7 @@
                                     </li>
                                   <li>
                                         <a href="http://4bsi.000webhostapp.com" class="btn btn-social btn-facebook btn-simple">
-                                            <i class="fa fa-facebook-square"></i> Equipe de Desenvolvedores 4teto
+                                            <i class="fa fa-link"></i> Equipe de Desenvolvedores 4teto
                                         </a>
                                     </li>
                                    

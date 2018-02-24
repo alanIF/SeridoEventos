@@ -12,8 +12,12 @@ require_once '../Controller/EventoController.php';
         $local_evento=$vet[0]['local_evento'] ;
         $link=$vet[0]['link_inscricao']; 
         $curso=$vet[0]['curso'] ;
-        $inicio_evento=$vet[0]['inicio_evento']; 
-        $fim_evento=$vet[0]['fim_evento'] ;
+        $D_ini = explode(' ', $vet[0]['inicio_evento'], 2); 
+        $inicio_evento = $D_ini[0].'T'.$D_ini[1]; 
+        $D_fim = explode(' ', $vet[0]['fim_evento'], 2); 
+        $fim_evento= $D_fim[0].'T'.$D_fim[1];
+        $bairro=$vet[0]['bairro'] ;
+        $cidade=$vet[0]['cidade'] ;
         $local_evento2=$vet2[0]['address'];
         $partes = explode("-", $local_evento2);
     } else {
@@ -35,14 +39,14 @@ if (isset($_POST["atualizar"])) {
     <div class="row">
         <div class="col-md-5">
             <div class="form-group">
-                <label>Titulo</label>
+                <label>Titulo*</label>
                 <input type="text" class="form-control border-input" name="titulo" placeholder="Titulo do Evento" required="" value="<?php echo $titulo;?>">
             </div>
         </div>
         <div class="col-md-3">
             <div class="form-group">
                 <label>Curso</label>
-                <input type="text" class="form-control border-input" placeholder="curso" name="curso" required="" value="<?php echo $curso;?>">
+                <input type="text" class="form-control border-input" placeholder="curso" name="curso" value="<?php echo $curso;?>">
             </div>
         </div>
         <div class="col-md-4">
@@ -56,16 +60,16 @@ if (isset($_POST["atualizar"])) {
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
-                <label>Inicio do Evento</label>
-                <input type="datetime-local" class="form-control border-input" placeholder="Inicio do Evento" name="inicio" required="" value="<?php echo $inicio_evento;?>">
+                <label>Inicio do Evento*</label>
+                <input type="datetime-local" class="form-control border-input"  name="inicio" required="" value="<?php echo $inicio_evento;?>">
             </div>
 
 
         </div>
         <div class="col-md-6">
             <div class="form-group">
-                <label>Fim do Evento</label>
-                <input type="datetime-local"  class="form-control border-input" placeholder="Fim do Evento" name="fim" required="" value="<?php echo $fim_evento;?>">
+                <label>Fim do Evento*</label>
+                <input type="datetime-local"  class="form-control border-input" name="fim" required="" value="<?php echo $fim_evento;?>">
             </div>
         </div>
     </div>
@@ -73,7 +77,7 @@ if (isset($_POST["atualizar"])) {
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <label>Local do Evento</label>
+                <label>Local do Evento*</label>
                 <input type="text" class="form-control border-input" placeholder="Local do Evento" name="local" required="" value="<?php echo $local_evento;?>">
             </div>
         </div>
@@ -84,7 +88,7 @@ if (isset($_POST["atualizar"])) {
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <label>Descrição do Evento</label>
+                <label>Descrição do Evento*</label>
                 <textarea rows="5" class="form-control border-input" placeholder="Descrição do Evento" name="descricao"><?php echo $descricao; ?></textarea>
             </div>
         </div>
@@ -92,25 +96,25 @@ if (isset($_POST["atualizar"])) {
      <div class="row">
         <div class="col-md-4">
             <div class="form-group">
-                <label>Rua</label>
+                <label>Rua*</label>
                 <input type="text" class="form-control border-input" placeholder="Rua" name="rua" required="" value="<?php echo $partes[0]; ?>"> 
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
-                <label>Cidade</label>
-                <input type="text" class="form-control border-input" placeholder="Cidade" name="cidade" required="" > 
+                <label>Cidade*</label>
+                <input type="text" class="form-control border-input" placeholder="Cidade" name="cidade" value="<?php echo $cidade; ?>" required="" > 
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
-                <label>Bairro</label>
-                <input type="text" class="form-control border-input" placeholder="Bairro (Centro)" name="bairro" required=""> 
+                <label>Bairro*</label>
+                <input type="text" class="form-control border-input" placeholder="Bairro (Centro)" name="bairro" value="<?php echo $bairro; ?>" required=""> 
             </div>
         </div>
         <div class="col-md-3">
             <div class="form-group">
-                <label>Estado</label>
+                <label>Estado*</label>
                 <select name="uf" class="form-control border-input">
                     <option value="AC">Acre</option>
                     <option value="AL">Alagoas</option>
@@ -144,7 +148,7 @@ if (isset($_POST["atualizar"])) {
         </div>
         <div class="col-md-2">
             <div class="form-group">
-                <label>Número</label>
+                <label>Número*</label>
                 <input type="text" class="form-control border-input" placeholder="N° prédio" name="num" required="" value="<?php echo $partes[1]; ?>"> 
             </div>
         </div>
@@ -152,9 +156,9 @@ if (isset($_POST["atualizar"])) {
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <label for="example-color-input" class="col-2 col-form-label">Cor</label>
+                <label for="example-color-input" class="col-2 col-form-label">Cor*</label>
 
-                <input type="color" name="cor" placeholder="Escolha a cor do Evento">
+                <input type="color" name="cor">
             </div>
         </div>
     </div>

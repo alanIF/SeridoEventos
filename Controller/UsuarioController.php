@@ -25,8 +25,14 @@ Class UsuarioController{
     
     public function EditarUsuario($nome, $email, $instituicao,$validacao,$tipo,$id) {
             editarUsuario($nome, $email, $instituicao, $validacao,$tipo,$id);
-            
-       
+    }
+    
+    public function EditarPerfil ($nome, $email, $inst, $senha, $confSenha, $id){
+            if($senha == $confSenha){
+                editarPerfil ($nome, $email, $inst, $senha,$id);
+            }  else {
+                Alert("Ops!", "Senhas não coincidem!", "danger");
+            }
     }
     
 }    

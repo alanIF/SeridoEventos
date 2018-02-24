@@ -19,14 +19,14 @@ if (isset($_POST["cadastrar"])) {
     <div class="row">
         <div class="col-md-5">
             <div class="form-group">
-                <label>Titulo</label>
+                <label>Titulo*</label>
                 <input type="text" class="form-control border-input" name="titulo" placeholder="Titulo do Evento" required="">
             </div>
         </div>
         <div class="col-md-3">
             <div class="form-group">
                 <label>Curso</label>
-                <input type="text" class="form-control border-input" placeholder="curso" name="curso" required="">
+                <input type="text" class="form-control border-input" placeholder="curso" name="curso">
             </div>
         </div>
         <div class="col-md-4">
@@ -40,16 +40,16 @@ if (isset($_POST["cadastrar"])) {
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
-                <label>Inicio do Evento</label>
-                <input type="datetime-local" class="form-control border-input" placeholder="Inicio do Evento" name="inicio" required="">
+                <label>Inicio do Evento*</label>
+                <input type="datetime-local" class="form-control border-input" name="inicio" required="">
             </div>
 
 
         </div>
         <div class="col-md-6">
             <div class="form-group">
-                <label>Fim do Evento</label>
-                <input type="datetime-local"  class="form-control border-input" placeholder="Fim do Evento" name="fim" required="">
+                <label>Fim do Evento*</label>
+                <input type="datetime-local"  class="form-control border-input" name="fim" required="">
             </div>
         </div>
     </div>
@@ -57,7 +57,7 @@ if (isset($_POST["cadastrar"])) {
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <label>Local do Evento</label>
+                <label>Local do Evento*</label>
                 <input type="text" class="form-control border-input" placeholder="Local do Evento" name="local" required="">
             </div>
         </div>
@@ -68,7 +68,7 @@ if (isset($_POST["cadastrar"])) {
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <label>Descrição do Evento</label>
+                <label>Descrição do Evento*</label>
                 <textarea rows="5" class="form-control border-input" placeholder="Descrição do Evento" name="descricao"></textarea>
             </div>
         </div>
@@ -76,34 +76,34 @@ if (isset($_POST["cadastrar"])) {
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <label for="example-color-input" class="col-2 col-form-label">Cor</label>
+                <label for="example-color-input" class="col-2 col-form-label">Cor*</label>
 
-                <input type="color" name="cor" placeholder="Escolha a cor do Evento">
+                <input type="color" name="cor">
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-4">
             <div class="form-group">
-                <label>Rua</label>
+                <label>Rua*</label>
                 <input type="text" class="form-control border-input" placeholder="Rua" name="rua" required=""> 
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
-                <label>Cidade</label>
+                <label>Cidade*</label>
                 <input type="text" class="form-control border-input" placeholder="Cidade" name="cidade" required=""> 
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
-                <label>Bairro</label>
+                <label>Bairro*</label>
                 <input type="text" class="form-control border-input" placeholder="Bairro (Centro)" name="bairro" required=""> 
             </div>
         </div>
         <div class="col-md-3">
             <div class="form-group">
-                <label>Estado</label>
+                <label>Estado*</label>
                 <select name="uf" class="form-control border-input">
                     <option value="AC">Acre</option>
                     <option value="AL">Alagoas</option>
@@ -137,7 +137,7 @@ if (isset($_POST["cadastrar"])) {
         </div>
         <div class="col-md-2">
             <div class="form-group">
-                <label>Número</label>
+                <label>Número*</label>
                 <input type="text" class="form-control border-input" placeholder="N° prédio" name="num" required=""> 
             </div>
         </div>
