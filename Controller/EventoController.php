@@ -7,8 +7,13 @@ Class EventoController{
 		$fim =date('Y-m-d H:i:s', strtotime($fim));
                 if (empty($link)){ $link ="#";}
                 if (empty($curso)){$curso = "Geral";}
-       return cadastrarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id_usuario,$rua,$numero,$bairro,$cidade,$uf);
-    }
+                if(strtotime($inicio) > strtotime($fim)){
+                    Alert("Error!", "Digite um Intervalo correto, de inicio e fim de evento","danger");
+               }else{
+                     return cadastrarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id_usuario,$rua,$numero,$bairro,$cidade,$uf);
+               }
+       
+               }
     
     public function ListarEventos($usuario) {
         return listarEventos($usuario);
@@ -27,8 +32,13 @@ Class EventoController{
 		$fim =date('Y-m-d H:i:s', strtotime($fim));
                 if (empty($link)){ $link ="#";}
                 if (empty($curso)){$curso = "Geral";}
-       return atualizarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id,$rua,$numero,$bairro,$cidade,$uf);
-    }
+                if(strtotime($inicio) > strtotime($fim)){
+                    Alert("Error!", "Digite um Intervalo correto, de inicio e fim de evento","danger");
+                }else{
+                    return atualizarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao,$cor,$id,$rua,$numero,$bairro,$cidade,$uf);
+                }
+       
+                }
      public function excluir_Evento($id) {
         excluir_Evento($id);
     }

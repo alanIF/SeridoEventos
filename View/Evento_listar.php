@@ -41,7 +41,13 @@ include ("topo.phtml");
                     $tamanho = count($vetor);
                     if ($tamanho > 0) {
                         for ($i = 0; $i < $tamanho; $i++) {
-                            echo"<tr><td>" . $vetor[$i]['titulo'] . "</td>";
+                            if($vetor[$i]['status']==0){
+                                echo "<tr class=''>";
+                            }else{
+                                 echo "<tr class='success'>";
+
+                            }
+                            echo"<td>" . $vetor[$i]['titulo'] . "</td>";
                             echo"<td>" . $vetor[$i]['descricao'] . "</td>";
                             echo"<td>" . $vetor[$i]['local_evento'] . "</td>";
                             echo"<td>" . $vetor[$i]['link_inscricao'] . "</td>";

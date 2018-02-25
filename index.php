@@ -2,6 +2,7 @@
  <?php 
                     require './Model/Calendar.php';
                     require './Model/connect.php';
+                    atualizarStatusEvento();
                     $evts = allEventos();
                     $tam = count($evts);
 ?>
@@ -169,7 +170,7 @@
      <?php
                 require_once './Model/connect.php';
      $conn = F_conect();
-    $result = mysqli_query($conn, "Select * from evento order by fim_evento DESC");
+    $result = mysqli_query($conn, "Select * from evento where status=0 order by fim_evento DESC");
     
     $i = 0;
     $eventos = array();

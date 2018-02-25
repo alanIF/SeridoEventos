@@ -9,8 +9,8 @@ function cadastrarEvento($titulo, $curso, $link, $inicio, $fim,$local,$descricao
     $long = @$output->results[0]->geometry->location->lng;
     if(isset($lat) AND isset($long)){
         //CADASTRO EVENTO
-        $sql = "INSERT INTO evento(titulo, descricao, link_inscricao,local_evento,curso,cor,bairro,cidade,inicio_evento,fim_evento,id_usuario)
-                VALUES('" . $titulo . "','" . $descricao . "','" . $link . "','" . $local . "','".$curso."','".$cor."','".$bairro."','".$cidade."','".$inicio."','".$fim."','".$id_usuario."')";
+        $sql = "INSERT INTO evento(titulo, descricao, link_inscricao,local_evento,curso,cor,bairro,cidade,inicio_evento,fim_evento,id_usuario,status)
+                VALUES('" . $titulo . "','" . $descricao . "','" . $link . "','" . $local . "','".$curso."','".$cor."','".$bairro."','".$cidade."','".$inicio."','".$fim."','".$id_usuario."',0)";
         if ($conn->query($sql) == TRUE) {
             Alert("Oba!", "Evento cadastrado com sucesso <br/> <a href='Evento_listar.php'> Listar seus Eventos</a>", "success");
             $last = $conn->insert_id;
@@ -69,7 +69,7 @@ function listarEventos($usuario) {
             $eventos[$i]['inicio_evento'] = $row['inicio_evento'];
             $eventos[$i]['fim_evento'] = $row['fim_evento'];
             $eventos[$i]['link_inscricao'] = $row['link_inscricao'];
-
+            $eventos[$i]['status'] = $row['status'];  
             $i++;
         }
     }

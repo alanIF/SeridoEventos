@@ -19,6 +19,11 @@ create table usuario(
 	1- Validado, tem acesso e pode cadastrar seus eventos
 
 */
+/*
+	status do evento
+	0- Não finalizado
+	1- Finalizado
+*/
 create table evento (
   id int  not null auto_increment,
   id_usuario int not null,
@@ -27,6 +32,7 @@ create table evento (
   link_inscricao text not null,
   local_evento text not null,
   curso text not null,
+  status int,
   cor varchar(220) not null,
   cidade varchar(220) not null,
   bairro varchar(220) not null,
