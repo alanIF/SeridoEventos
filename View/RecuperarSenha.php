@@ -62,8 +62,8 @@ if (isset($_POST['salvar']) && isset($_POST['email'])) {
 //RECEBENDO OS DADOS
 //MENSSAGEM
         $body = '<div>
-           <h4>Você solicitou a senha de acesso do sistema Seridó Eventos Universitários, caso nãa tenha realizado essa ação ignore este email.</h4>
-           Sua senha de login é "<b>' . $SENHA . '</b>"
+           <h4>Você solicitou a senha de acesso para o sistema Seridó Eventos Universitários, caso não tenha realizado essa ação ignore o email.</h4>
+           Sua senha de acesso é "<b>' . $SENHA . '</b>"
                Att: Sistema Seridó Eventos
         </div>';
 
@@ -109,7 +109,7 @@ if (isset($_POST['salvar']) && isset($_POST['email'])) {
         if ($mail->send()) {
              Alert("Oba!", "Um E-mail foi enviado, verifique sua caixa de entrada", "success");
         } else {
-            echo 'Deu errado..' . $mail->ErrorInfo;
+            Alert("Ops!", "E-mail não encontrado, verifique e tente novamente!", "danger");
         }
     }
 }

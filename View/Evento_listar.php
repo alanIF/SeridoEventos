@@ -52,9 +52,17 @@ include ("topo.phtml");
                             echo"<td>" . $vetor[$i]['local_evento'] . "</td>";
                             echo"<td>" . $vetor[$i]['link_inscricao'] . "</td>";
                             echo"<td>" . $vetor[$i]['curso'] . "</td>";
-                            echo"<td>" . $vetor[$i]['inicio_evento'] . "</td>";
-                            echo"<td>" . $vetor[$i]['fim_evento'] . "</td>";
-
+                            
+                            $data = substr($vetor[$i]['inicio_evento'], 0, 10);
+                            $data_BR = explode("-", $data);
+                            $hora = substr($vetor[$i]['inicio_evento'], 11, -3);
+                            echo"<td>" . $data_BR[2].'/'.$data_BR[1].'/'.$data_BR[0] .' '.$hora. "h </td>";
+                            
+                            $data2 = substr($vetor[$i]['fim_evento'], 0, 10);
+                            $data_BR2 = explode("-", $data2);
+                            $hora2 = substr($vetor[$i]['fim_evento'], 11, -3);
+                            
+                            echo"<td>" . $data_BR2[2].'/'.$data_BR2[1].'/'.$data_BR2[0] .' '.$hora2. "h </td>";
                             echo"<td><a href=Evento_editar.php?id=" . $vetor[$i]['id'] . "><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>
                                                                 <a onclick='return confirmar();' href=Evento_excluir.php?id=" . $vetor[$i]['id'] . "><i class='fa fa-trash-o' aria-hidden='true'></i></a></td></tr>";
                         }
