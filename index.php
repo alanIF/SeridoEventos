@@ -262,8 +262,8 @@
         <div class="section section-our-clients-freebie">
             <div class="container">
                 <div class="title-area">
-                    <h5 class="subtitle text-gray">Universitários </h5>
-                    <h2>Desenvolvedores</h2>
+                    <h5 class="subtitle text-gray">Parceiros </h5>
+                    <h2>Instituiçoes</h2>
                     <div class="separator separator-danger">∎</div>
                 </div>
 
@@ -282,25 +282,29 @@
                             </div>
                         </a>
                     </li>
+                         <li>
+                        <a href="#testimonial3" role="tab" data-toggle="tab">
+                            <div class="image-clients">
+                                <img alt="..." class="img-circle" src="assets/img/faces/face_9.jpg"/>
+                            </div>
+                        </a>
+                    </li>
                 </ul>
 
 
                 <div class="tab-content">
                     <div class="tab-pane active" id="testimonial1">
                         <p class="description">
-                            Técnico em Informática pelo IFRN.<br/>
-                            Técnico em TI na enfasê Informatica para Internet e Redes pelo IMD.
-                            Graduando em Sistemas de Informação pela UFRN.
+                            Universidade Federal do Rio Grande do Norte
                         </p>
                     </div>
                     <div class="tab-pane" id="testimonial2">
                         <p class="description"> 
-                             Técnico em Informática pelo IFRN.<br/>
-                            Graduando em Sistemas de Informação pela UFRN.
+                            Instituto Federal do Rio Grande do Norte
                         </p>
                     </div>
                     <div class="tab-pane" id="testimonial3">
-                        <p class="description"> I used a period because contrary to popular belief I strongly dislike exclamation points! We no longer have to be scared of the truth feels good to be home In Roman times the artist would contemplate proportions and colors. The 'Gaia' team did a great work while we were collaborating. They provided a vision that was in deep connection with our needs and helped us achieve our goals.
+                        <p class="description"> Universidade Estadual do Rio Grande do Norte.
                         </p>
                     </div>
 

@@ -73,15 +73,20 @@ if (isset($_POST["cadastrar"])) {
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
+   <div class="col-md-3">
             <div class="form-group">
-                <label for="example-color-input" class="col-2 col-form-label">Cor*</label>
-
-                <input type="color" name="cor">
+                <label>Cor*</label>
+                <select name="cor" class="form-control border-input">
+                    <option value="#0000FF">Azul</option>
+                    <option value="#FFFF00">Amarelo</option>
+                    <option value="#008000">Verde</option>
+                    <option value="#FF0000">Vermelho</option>
+                    <option value="#000000">Preto</option>
+                    <option value="#FFFFFF">Branco</option>
+                   
+                </select>
             </div>
         </div>
-    </div>
     <div class="row">
         <div class="col-md-4">
             <div class="form-group">
