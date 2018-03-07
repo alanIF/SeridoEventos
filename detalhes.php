@@ -26,11 +26,10 @@ if (isset($_GET['idevento'])) {
         if(empty($link)){
             $link = "O evento não possui web site.";
         }
-		function mensagem($idEvt){
-			echo "Seridó Eventos Universitários: Confira o evento http://localhost/SeridoEventos/detalhes.php?idevento=".$idEvt."#det_'";
-		
-		
-		}
+        
+	function mensagem($idEvt, $titulo){
+		echo "Seridó Eventos Universitários: ".$titulo.". Mais detalhes em: http://localhost/SeridoEventos/detalhes.php?idevento=".$idEvt."##det_";
+        }
         ?>
         <html lang="en">
 
@@ -218,7 +217,9 @@ if (isset($_GET['idevento'])) {
                         <p><i class="fa fa-calendar-o" aria-hidden="true"></i>&emsp;De&ensp; <?php echo $ini_ev; ?>
                                                                                 &ensp;a&ensp;<?php echo $fim_ev; ?></p>
                         <p><i class="fa fa-link" aria-hidden="true"></i>&emsp;<?php echo $link; ?></p>
-						<p>Compartilhar: Facebook  <a href="http://twitter.com/intent/tweet?text=<?php mensagem($idEvt); ?>" title="Twittar sobre" target="_blank"><i class="fa fa-twitter fa-2x info"></i></a>
+                        <p><a href="#"><i class="fa fa-facebook-square fa-2x info"></i></a>
+                            &emsp;
+                            <a href="http://twitter.com/intent/tweet?text=<?php mensagem($idEvt, $titulo); ?>" title="Twittar sobre" target="_blank"><i class="fa fa-twitter fa-2x info"></i></a>
 	
 </p>
 
