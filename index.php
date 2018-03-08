@@ -88,22 +88,6 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right navbar-uppercase">
                      
-                        <li class="dropdown">
-                            <a href="#gaia" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-share-alt"></i> Redes Sociais
-                            </a>
-                            <ul class="dropdown-menu dropdown-danger">
-                                <li>
-                                    <a href="#"><i class="fa fa-facebook-square"></i> Facebook</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-instagram"></i> Instagram</a>
-                                </li>
-                            </ul>
-                        </li>
                         <li> <a href="View/" class="btn btn-danger btn-fill"> Entrar</a></li>
                     </ul>
                 </div>
@@ -271,14 +255,14 @@
                     <li class="active">
                         <a href="#testimonial1" role="tab" data-toggle="tab">
                             <div class="image-clients">
-                                <img alt="..." class="img-circle" src="assets/img/faces/face_8.jpg"/>
+                                <img alt="..." class="img-circle" src="assets/img/faces/face_7.jpg"/>
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="#testimonial2" role="tab" data-toggle="tab">
                             <div class="image-clients">
-                                <img alt="..." class="img-circle" src="assets/img/faces/face_7.jpg"/>
+                                <img alt="..." class="img-circle" src="assets/img/faces/face_8.jpg"/>
                             </div>
                         </a>
                     </li>
@@ -295,16 +279,31 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="testimonial1">
                         <p class="description">
-                            Universidade Federal do Rio Grande do Norte
+                            Universidade Federal do Rio Grande do Norte<br/>
+                             Rua Joaquim Gregório, S/N, Penedo, 59.300-000<br/>
+                             Email:secretariacaico@ceres.ufrn.br<br/>
+
+                     
+                            Telefone:(84) 3342-2238 | (84) 3421-4908 | (84) 99193-6052
+
                         </p>
                     </div>
                     <div class="tab-pane" id="testimonial2">
                         <p class="description"> 
-                            Instituto Federal do Rio Grande do Norte
+                            Instituto Federal do Rio Grande do Norte.<br/>
+                            RN 288, s/n, Nova Caicó | Caicó-RN | CEP: 59300-000<br/>
+E-mail:
+cocsev.ca@ifrn.edu.br<br/>
+Telefone:
+(84) 4005-4102
                         </p>
                     </div>
                     <div class="tab-pane" id="testimonial3">
-                        <p class="description"> Universidade Estadual do Rio Grande do Norte.
+                        <p class="description"> Universidade do Estado do Rio Grande do Norte.
+                            <br/>
+                             Av. Rio Branco, 725, Caicó - RN, 59300-000<br/>
+                             Telefone:(84) 3421-6513<br/>
+                             Email:caico@uern.br
                         </p>
                     </div>
 
