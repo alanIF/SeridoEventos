@@ -174,4 +174,4 @@ if (isset($_POST["atualizar"])) {
 </form>
 
 
-<?php include ("rodape.html") ?>
+<?php include ("rodape.php") ?>

@@ -13,4 +13,4 @@ include ("topo.phtml");
 
 
     </div>
-<?php include ("rodape.html")?>
+<?php include ("rodape.php")?>

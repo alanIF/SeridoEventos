@@ -3,10 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/SeridoEventos/View/index.php</file>
+            <file>file:/C:/xampp/htdocs/SeridoEventos/View/rodape.html</file>
             <file>file:/C:/xampp/htdocs/SeridoEventos/View/Menu.php</file>
+            <file>file:/C:/xampp/htdocs/SeridoEventos/index.php</file>
+            <file>file:/C:/xampp/htdocs/SeridoEventos/View/Login.php</file>
+            <file>file:/C:/xampp/htdocs/SeridoEventos/detalhes.php</file>
+            <file>file:/C:/xampp/htdocs/SeridoEventos/View/assets/css/login.css</file>
             <file>file:/C:/xampp/htdocs/SeridoEventos/View/topo.phtml</file>
             <file>file:/C:/xampp/htdocs/SeridoEventos/View/RecuperarSenha.php</file>
-            <file>file:/C:/xampp/htdocs/SeridoEventos/View/Evento_listar.php</file>
         </group>
     </open-files>
 </project-private>

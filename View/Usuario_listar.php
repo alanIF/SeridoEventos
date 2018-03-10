@@ -60,4 +60,4 @@ require_once 'topo.phtml';
 
     </div>
 </div>
-<?php require_once 'rodape.html'; ?>
+<?php require_once 'rodape.php'; ?>

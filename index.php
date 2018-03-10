@@ -246,8 +246,8 @@
         <div class="section section-our-clients-freebie">
             <div class="container">
                 <div class="title-area">
-                    <h5 class="subtitle text-gray">Parceiros </h5>
-                    <h2>Instituiçoes</h2>
+                    <h2>Instituições</h2>
+                    <h5 class="subtitle text-gray">Instituições que contribuem para a inclusão universitária, seus eventos estão em nosso calendário.</h5>
                     <div class="separator separator-danger">∎</div>
                 </div>
 
@@ -255,21 +255,28 @@
                     <li class="active">
                         <a href="#testimonial1" role="tab" data-toggle="tab">
                             <div class="image-clients">
-                                <img alt="..." class="img-circle" src="assets/img/faces/face_7.jpg"/>
+                                <img alt="..." class="img-circle" src="assets/img/faces/ufrn.png"/>
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="#testimonial2" role="tab" data-toggle="tab">
                             <div class="image-clients">
-                                <img alt="..." class="img-circle" src="assets/img/faces/face_8.jpg"/>
+                                <img alt="..." class="img-circle" src="assets/img/faces/ifrn.png"/>
                             </div>
                         </a>
                     </li>
                          <li>
                         <a href="#testimonial3" role="tab" data-toggle="tab">
                             <div class="image-clients">
-                                <img alt="..." class="img-circle" src="assets/img/faces/face_9.jpg"/>
+                                <img alt="..." class="img-circle" src="assets/img/faces/uern.png"/>
+                            </div>
+                        </a>
+                    </li>
+                     <li>
+                        <a href="#testimonial4" role="tab" data-toggle="tab">
+                            <div class="image-clients">
+                                <img alt="..." class="img-circle" src="assets/img/faces/emcm.png"/>
                             </div>
                         </a>
                     </li>
@@ -306,6 +313,15 @@ Telefone:
                              Email:caico@uern.br
                         </p>
                     </div>
+                    <div class="tab-pane" id="testimonial4">
+                        <p class="description">
+                            Escola Multicampi de Ciências Médicas do Rio Grande do Norte<br/>
+                             Av. Cel. Martiniano, 354, Caicó - RN, 59300-000<br/>
+                             Email:secretaria@emcm.ufrn.br<br/>
+                             Telefone:(84) 3342-2337
+
+                        </p>
+                    </div>
 
                 </div>
 
@@ -319,32 +335,96 @@ Telefone:
         <footer class="footer footer-big footer-color-black" data-color="black">
             <div class="container">
                 <div class="row">
-                 
-                   
-                    <div class="col-md-2 col-md-offset-1 col-sm-3">
+                  <div class="col-md-2  col-sm-3">
                         <div class="info">
-                            <h5 class="title">Segui-nos</h5>
+                            <h5 class="title"><i class="fa fa-star"></i> CERES</h5>
                             <nav>
-                                <ul>
-                                    <li>
-                                        <a href="https://www.facebook.com/groups/239083846144738/" class="btn btn-social btn-facebook btn-simple">
+                                <ul>  
+                                   <li>
+                                        <a href="https://www.facebook.com/nossosplanosparaoceres/" class="btn btn-social btn-facebook btn-simple">
                                             <i class="fa fa-facebook-square"></i> Facebook
                                         </a>
                                     </li>
-                                  <li>
-                                        <a href="http://4bsi.000webhostapp.com" class="btn btn-social btn-facebook btn-simple">
-                                            <i class="fa fa-link"></i> Equipe de Desenvolvedores 4teto
+                                     <li>
+                                        <a href="http://www.ceres.ufrn.br/" class="btn btn-social btn-facebook btn-simple">
+                                            <i class="fa fa-link"></i> Site 
                                         </a>
                                     </li>
-                                   
                                 </ul>
                             </nav>
                         </div>
                     </div>
+                    
+                    <div class="col-md-2 col-sm-3">
+                        <div class="info">
+                            <h5 class="title"><i class="fa fa-star"></i> IFRN - Caicó</h5>
+                            <nav>
+                                <ul>  
+                                   <li>
+                                        <a href="https://www.facebook.com/IFRNCampusCaico/" class="btn btn-social btn-facebook btn-simple">
+                                            <i class="fa fa-facebook-square"></i> Facebook
+                                        </a>
+                                    </li>
+                                     <li>
+                                        <a href="http://portal.ifrn.edu.br/campus/caico" class="btn btn-social btn-facebook btn-simple">
+                                            <i class="fa fa-link"></i> Site 
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-2 col-sm-3">
+                        <div class="info">
+                            <h5 class="title"><i class="fa fa-star"></i> UERN - Caicó</h5>
+                            <nav>
+                                <ul>  
+                                   <li>
+                                        <a href="https://www.facebook.com/pages/Uern-Campus-Caic%C3%B3/549256068432412" class="btn btn-social btn-facebook btn-simple">
+                                            <i class="fa fa-facebook-square"></i> Facebook
+                                        </a>
+                                    </li>
+                                     <li>
+                                        <a href="http://caico.uern.br/default.asp?item=caico-apresentacao" class="btn btn-social btn-facebook btn-simple">
+                                            <i class="fa fa-link"></i> Site 
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-2 col-sm-3">
+                        <div class="info">
+                            <h5 class="title"><i class="fa fa-star"></i> EMCM</h5>
+                            <nav>
+                                <ul>  
+                                   <li>
+                                        <a href="https://www.facebook.com/emcmcaico/" class="btn btn-social btn-facebook btn-simple">
+                                            <i class="fa fa-facebook-square"></i> Facebook
+                                        </a>
+                                    </li>
+                                     <li>
+                                        <a href="https://www.instagram.com/emcm.ufrn/" class="btn btn-social btn-facebook btn-simple">
+                                            <i class="fa fa-instagram"></i> Instagram 
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://emcm.ufrn.br/" class="btn btn-social btn-facebook btn-simple">
+                                            <i class="fa fa-link"></i> Site 
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    
                 </div>
                 <hr>
                 <div class="copyright">
-                    © <script> document.write(new Date().getFullYear())</script> Desenvolvido por Alan Tavares e Janailton Galvão.
+                    © <script> document.write(new Date().getFullYear())</script> Desenvolvido por Alan Tavares e Janailton Galvão. 
+                     <a href="http://4bsi.000webhostapp.com" class="btn btn-social btn-facebook btn-simple">4teto company ©</a>
                 </div>
             </div>
         </footer>

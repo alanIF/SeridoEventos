@@ -155,4 +155,4 @@ if (isset($_POST["cadastrar"])) {
 </form>
 
 
-<?php include ("rodape.html") ?>
+<?php include ("rodape.php") ?>

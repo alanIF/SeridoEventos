@@ -147,4 +147,4 @@
             <input type="submit" class="btn btn-success" name="cadastrar" value="Cadastrar"> 
         </form>   
 
-   <?php include ("rodape.html") ?>
+   <?php include ("rodape.php") ?>

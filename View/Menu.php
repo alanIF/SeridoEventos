@@ -84,9 +84,9 @@ include ("topo.phtml");
   </div>
 
 
-                                    </div>
+</div>
 
                        
 
 
-<?php include ("rodape.html")?>
+<?php include ("rodape.php")?>

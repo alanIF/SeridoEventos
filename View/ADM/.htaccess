@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Acesso Restrito!"
-AuthUserFile /xampp/htdocs/SeridoEventos/View/ADM/.htpasswd
-Require valid-user

@@ -57,4 +57,4 @@
             <input type="submit" class="btn btn-success center-block" name="cadastrar" value="Atualizar"> 
         </form>     
 
-    <?php require_once './Rodape.html'; ?>
+    <?php require_once './rodape.php'; ?>
